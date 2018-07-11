@@ -1,0 +1,16 @@
+//defulat for grid
+$grid: 12;
+$grid-map: (xs,sm,md,lg,xl);
+$spacprop: (p:padding, m:margin);
+$textaling: (center, left, right);
+$floatdirection: (right left none);
+$direction: (t:top, b:bottom, r:right, l:left);
+$display:(inline,inline-block,block,none); 
+$positon:(static relative absolute fixed);
+//color themes
+$white:#fff;
+$minblackcolor: #1d1d1d;
+$colortext: #62615d;
+$minredcolor:#ed0a3b;
+$color1: #4a27d2;
+$color2:#e752cf;

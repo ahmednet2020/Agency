@@ -1,0 +1,14 @@
+//start templa
+@import '_var';
+@import '_mixin';
+@import 'grid/_grid';
+@import '_normalize';
+/*layout*/
+@import 'layout/_section';
+@import 'layout/_footer';
+/*forms*/
+@import 'form/_btn';
+/*mobile*/
+@import '_mobile';
+
+

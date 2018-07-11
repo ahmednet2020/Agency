@@ -1,0 +1,67 @@
+//postion
+//float
+@each$p in $positon {
+    .position-#{$p} {
+        position: $p #{'!important'};
+    }
+}
+
+@each $p,$v in $direction {
+    @for $i from 1 through 100 {
+        .position-#{$v}-#{$i} {
+            #{$v} : $i#{"% !important"};
+        }
+    }
+    $i:1;
+    $s:0.5;
+    @while $i <= $grid {
+        .position-#{$v}-rem-#{$i} {
+            #{$v}: $s#{'rem !important'};
+        }
+        $i: $i + 1;
+        $s: $s + 0.5;
+    }
+}
+
+// media
+@each $map in $grid-map {
+    @include media($map) {
+        @each$p in $positon {
+            .position-#{$map}-#{$p} {
+                position: $p #{'!important'};
+            }
+        }
+
+        @each $p,$v in $direction {
+            @for $i from 1 through 100 {
+                .position-#{$map}-#{$v}-#{$i} {
+                    #{$v}:$i#{'% !important'};
+                }
+            }
+            $i:1;
+            $s:0.5;
+            @while $i <=$grid {
+                .position-#{$map}-#{$v}-rem-#{$i} {
+                    #{$v}:$s#{'rem !important'};
+                }
+                $i: $i+1;
+                $s: $s+0.5;
+            }
+        }
+    }
+}
+//float
+@each $i in $floatdirection{
+	.float-#{$i}{
+		float: $i#{'!important'};
+	}
+}
+@each $map in $grid-map {
+    @include media($map) {
+        @each $i in $floatdirection {
+            .float-#{$map}-#{$i} {
+                float: $i#{'!important'};
+            }
+        }
+    }
+}

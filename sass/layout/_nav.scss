@@ -1,0 +1,43 @@
+ .nav {
+     line-height: 1.5;
+     .navbtn {
+         margin: 1rem 0;
+         .togglebtn {
+             color: $white;
+             background-color: transparent;
+             display: none;
+             float: right;
+             font-size: 1.8rem;
+             cursor: pointer;
+         }
+         &:after {
+             content: "";
+             display: block;
+             clear: both;
+         }
+     }
+     .navbar {
+         padding: 1.5rem 0;
+         border-bottom: 1px solid $white;
+         .navlist {
+             .navlink,
+             .dropmanulink {
+                 font-size: 0.9rem;
+                 font-weight: bold;
+                 color: $white;
+             }
+             &>li {
+                 display: inline-block;
+                 vertical-align: top;
+                 padding: 0 1%;
+                 .dropmanu {
+                     display: none;
+                     overflow: hidden;
+                     li {
+                         margin-top: 0.5rem;
+                     }
+                 }
+             }
+         }
+     }
+ }

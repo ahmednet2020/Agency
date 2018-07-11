@@ -1,0 +1,75 @@
+// this mixin for meida class like sm,md,lg,xl,xs
+@mixin media($media) {
+    @if $media==sm {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+    @else if $media==md {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $media==lg {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $media==xl {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $media==xs {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+}
+
+//perfix mixin
+@mixin perfix($prop, $value, $perfix:(moz webkit ms no)) {
+    @each $i in $perfix {
+        @if $i==moz {
+            -moz-#{$prop}:#{$value};
+        }
+        @else if $i==webkit {
+            -webkit-#{$prop}:#{$value};
+        }
+        @else if $i==ms {
+            -ms-#{$prop}:#{$value};
+        }
+        @else if $i==o {
+            -o-#{$prop}:#{$value};
+        }
+        @else if $i==no {
+            #{$prop}:#{$value};
+        }
+    }
+}
+
+@mixin boxshadow($x, $color) {
+    @include perfix(box-shadow, $x $color, moz webkit ms no o);
+}
+
+@mixin transition($value) {
+    @include perfix(transition, $value, no webkit moz ms);
+}
+
+// placeholder color
+@mixin placeholder-color($color: red) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &::-ms-input-placeholder {
+        color: $color;
+    }
+    &::placeholder {
+        color: $color;
+    }
+}
+
+//trains

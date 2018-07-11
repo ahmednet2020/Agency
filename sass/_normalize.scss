@@ -1,0 +1,49 @@
+@import '_typography';
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+}
+
+html,
+body {
+    font-size: 14px;
+    font-family: sans-serif;
+    margin:0;
+    padding: 0;
+    @include media(xs) {
+        font-size: 12px;
+    }
+    @include media(lg) {
+        font-size: 16px;
+    }
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+}
+.bgblack{
+    background-color: $minblackcolor;
+    color: $white !important;
+
+}
+.bgred{
+    background-color: $minredcolor;
+    color: $white !important;
+}
+.bgwhite{
+    background-color: $white;
+    color: $minredcolor !important;
+}
+.bglight{
+            background-color: rgba($colortext, 0.1);
+            color: $white !important;
+}

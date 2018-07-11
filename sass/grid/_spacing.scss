@@ -1,0 +1,47 @@
+//spacing 
+//padding
+@each $i,$b in $spacprop {
+    .#{$i}-auto {
+        #{$b}: auto!important;
+    }
+    @for $l from 1 through 100 {
+        .#{$i}-#{$l} {
+            #{$b}: $l#{'% !important'};
+        }
+    }
+    @each $p,$d in $direction {
+        .#{$i}#{$p}-auto {
+            #{$b}-#{$d}: auto!important;
+        }
+        @for $l from 1 through 100 {
+            .#{$i}#{$p}-#{$l} {
+                #{$b}-#{$d}: $l#{'% !important'};
+            }
+        }
+    }
+}
+//media
+//@each $media in $grid-map {
+//    @include media($media) {
+ //        @each $i,$b in $spacprop {
+//             .#{$i}-#{$media}-auto {
+//                 .#{$b}: auto!important;
+//             }
+//              @for $l from 1 through 100 {
+//                 .#{$i}-#{$media}-#{$l} {
+//                     #{$b}: $l#{'% !important'};
+//                 }
+//             }
+//             @each $p,$d in $direction {
+//                 .#{$i}#{$p}-#{$media}-auto {
+//                     #{$b}-#{$d}: auto!important;
+//                 }
+//                 @for $l from 1 through 100 {
+//                     .#{$i}#{$p}-#{$media}-#{$l} {
+//                         #{$b}-#{$d}: $l#{'% !important'};
+//                     }
+//                 }
+//             }
+ //         }
+ //     }
+ // }

@@ -1,0 +1,93 @@
+//grid row,col,display,width
+.warpper{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: block;
+    width: 90%;
+    padding: 0;
+    margin:0 auto;
+}
+.row {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.row:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+//col normal
+%col {
+    display: inline-block;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+@for $i from 1 through $grid {
+.col-#{$i} {
+    @extend %col;
+}
+}
+@each $map in $grid-map {
+    @for $i from 1 through $grid {
+        .col-#{$map}-#{$i} {
+            @extend %col;
+        }
+    }
+}
+//col start
+@for $i from 1 through $grid {
+    .col-#{$i} {
+        width: (100% / $grid) * $i;
+    }
+}
+
+
+//width start
+@for $i from 1 through 100 {
+    .w-#{$i} {
+        width:$i#{'% !important'};
+    }
+}
+
+
+//display start
+@each $dis in $display {
+    .d-#{$dis} {
+        display : $dis #{"!important"};
+    }
+}
+
+//meida size
+@each $map in $grid-map {
+    @include media($map) {
+        @for $i from 1 through $grid {
+            .col-#{$map}-#{$i} {
+                width: (100% /$grid) * $i;
+            }
+        }
+        @for $i from 1 through 100 {
+            .w-#{$map}-#{$i} {
+                width:$i#{'% !important'};
+            }
+        }
+        @each $dis in $display {
+            .d-#{$map}-#{$dis} {
+                display : $dis #{"!important"};
+            }
+        }
+    }
+}
+@import '_spacing';
+//@import '_position';

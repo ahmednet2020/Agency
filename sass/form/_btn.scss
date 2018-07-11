@@ -1,0 +1,22 @@
+.redbtn {
+    @extend .bgred;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding: 0.5rem 2rem;
+}
+
+.whitebtn {
+    @extend .bgwhite;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+}
+.btnbord{
+	border:0.1rem solid $colortext;
+	padding: 0.5rem 2rem;
+	color: $colortext;
+    &:hover{
+                border-color: $minredcolor;
+    }
+}

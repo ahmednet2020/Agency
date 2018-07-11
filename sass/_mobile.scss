@@ -1,0 +1,61 @@
+@include media(xs) {
+    .top-nav {
+        span {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+    .whatnew {
+        .new {
+            .overlay {
+                min-height: 15rem;
+                background-color: rgba($minredcolor, 0.9);
+                overflow: hidden;
+            }
+        }
+        .whatnew-video {
+            margin-top: -10rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .text-right,
+    .text-left {
+        text-align: center;
+    }
+    .header {
+        .nav {
+            .navbtn {
+                .togglebtn {
+                    display: block;
+                }
+            }
+            .navbar {
+                display: none;
+                border: 0;
+                .navlist {
+                    li {
+                        width: 100%;
+                        margin: 0.5rem 0;
+                        .navlink,
+                        .dropmanulink {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .title-bar {
+        .log {
+            margin-bottom: 1rem !important;
+        }
+    }
+    .workreport {
+        margin-top: 1rem;
+        .content {
+            box-shadow: none;
+        }
+    }
+}

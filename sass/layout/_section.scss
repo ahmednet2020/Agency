@@ -1,0 +1,129 @@
+@import '_navtop';
+@import '_header';
+@import '_nav';
+.workreport {
+    margin-top: -15%;
+    .content {
+        background-color: $white;
+        overflow: hidden;
+        @include boxshadow(3px 3px 12px 6px, rgba($colortext, 0.3));
+    }
+}
+
+.section-header {
+    .redspan {
+        color: $minredcolor;
+    }
+    .line {
+        i {
+            color: $minredcolor;
+        }
+        &:after,
+        &:before {
+            content: "";
+            vertical-align: middle;
+            height: 1px;
+            background-color: $minblackcolor;
+            width: 3rem;
+            display: inline-block;
+        }
+    }
+}
+
+.services {
+    .card {
+        border: 0.1rem solid transparent;
+        @include transition(all 0.5s ease-in-out);
+        .card-head {
+            color: $minredcolor;
+        }
+        &:hover {
+            border-color: $colortext;
+        }
+    }
+}
+
+.skills {
+    .pross-bar {
+        vertical-align: middle;
+        .pross {
+            p {
+                white-space: nowrap;
+                i {
+                    color: $minredcolor;
+                }
+            }
+            .bar {
+                height: 1rem;
+                overflow: hidden;
+                vertical-align: middle;
+                position: relative;
+                .static {
+                    position: absolute;
+                    height: 70%;
+                    width: 100%;
+                    z-index: 1;
+                    bottom: 0;
+                    left: 0;
+                    background-image: linear-gradient(90deg, $color1 45%, $color2 90%);
+                }
+                .dynamic {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 70%;
+                    background-color: $color1;
+                }
+            }
+        }
+    }
+    .skills-circal {
+        a {
+            background-image: linear-gradient(90deg, $color1 45%, $color2 90%);
+            padding: 4rem 2rem;
+            border-radius: 100%;
+            color: $white;
+        }
+    }
+}
+
+.whatnew {
+    .new {
+        background-image: url("../img/IMG_0641.jpg");
+        background-size: cover;
+        overflow: hidden;
+        .overlay {
+            min-height: 20rem;
+            background-color: rgba($minredcolor, 0.9);
+            overflow: hidden;
+        }
+        .new-header {
+            color: $white;
+            padding: 2rem 0;
+        }
+    }
+    .whatnew-video {
+            margin-top: -15rem;
+        .video-content {
+            .content-item {
+                @include boxshadow(3px 3px 12px 6px,rgba($colortext, 0.3));
+            }
+        }
+    }
+}
+
+.pricing {
+    .card {
+        border: 1px solid $minblackcolor;
+        .card-head {
+            border-bottom: 1px solid $minblackcolor;
+            padding: 1rem 0;
+            ;
+        }
+        h3,
+        h4 {
+            color: $minredcolor;
+        }
+    }
+}
